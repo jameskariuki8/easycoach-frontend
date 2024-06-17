@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.border-container {
+    border: 2px solid #333; /* Border around the container */
+    padding: 20px; /* Padding inside the border */
+    margin: 20px; /* Margin around the border */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between the divs */
+    max-width: 1200px;
+}
+
+.box {
+    flex: 1 1 calc(20% - 10px); /* Adjust the percentage to 3 per row with the gap considered */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    height: 0;
+    padding-bottom: calc(20% - 10px); /* Creates a smaller square aspect ratio */
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .box {
+        flex: 1 1 calc(33.333% - 10px); /* Adjust for 3 divs per row on smaller screens */
+        padding: 10px;
+        padding-bottom: calc(33.333% - 10px); /* Maintain smaller square aspect ratio */
+    }
+}
